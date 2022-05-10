@@ -58,19 +58,49 @@ header {
   }
 }
 
-.button {
-  width: 32px;
-  height: 32px;
-  background-color: #FFFFFF;
-  border: 1px solid #F2F2F2;
-  border-radius: 8px;
-  cursor: pointer;
+
+
+.cartEmpty {
+  text-align: center;
+
+  p {
+    width: 280px;
+    line-height: 24px;
+  }
+
+  .btnGreen {
+    width: 245px;
+    line-height: 24px;
+
+    &:hover {
+      img {
+        transform: rotate(180deg) translateX(3px);
+      }
+    }
+
+    img {
+      position: relative;
+      top: 1px;
+      transform: rotate(180deg);
+      margin-right: 15px;
+      transition: transform 0.15s ease-in-out;
+    }
+  }
 }
 
 .search-block {
   border: 1px solid #F3F3F3;
   border-radius: 10px;
   padding: 0 15px;
+  position: relative;
+
+  .btnClear {
+    position: absolute;
+    right: 10px;
+    width: 18px;
+    height: 18px;
+    top: 12px;
+  }
 
   input {
     border: none;
@@ -81,7 +111,7 @@ header {
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -103,6 +133,12 @@ header {
 
   h2 {
     margin: 0;
+  }
+
+  .drawer-wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
   .items {
